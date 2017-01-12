@@ -1,5 +1,6 @@
 # SimpleTodo
 A repository for CodePath X GIT (Girls in Tech Taiwan) Android Bootcamp.
+
 Reference: http://codepath.com/courses/girlsintechtw
 
 ## Features
