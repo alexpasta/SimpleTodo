@@ -1,9 +1,11 @@
 package com.alexxpasta.simpletodo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +30,13 @@ public class EditItemActivity extends AppCompatActivity {
         if (itemText.isEmpty()) {
             Toast.makeText(this, "Todo item should not be empty...", Toast.LENGTH_SHORT).show();
             return;
+        }
+
+        // close keyboard
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
 
         Intent data = new Intent();
